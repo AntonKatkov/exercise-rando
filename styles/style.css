@@ -10,11 +10,12 @@ img {
     width: 130px;
     height: 130px;
     user-select: none;
+    margin: 10px;
 }
 .logo {
     width: auto;
     height: 50px;
-    cursor: p;
+    cursor: pointer;
 }
 
 main {
@@ -57,6 +58,7 @@ main {
     background-image: url(../img/background.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -68,7 +70,7 @@ main {
     justify-content: space-between;
     align-items: center;
     border-style: groove;    
-    border-width: 1px;
+    border-width: 2px;
     border-radius: 5px;
     margin: 10px;
 }
@@ -120,18 +122,6 @@ main {
     background-color: green;
     transform: translateY(4px);
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .shoppingCartList {
