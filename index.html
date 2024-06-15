@@ -1,62 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script src="./scripts/info.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/script.js"></script>
+
     <title>Lieferando</title>
-</head>
+  </head>
 
-<body>
+  <body onload="Start()">
     <div class="header">
-        <div class="headerMenu"></div>
-        <div class="headerMenu"><span class="headerText">SpeiseKarte</span></div>
-        <div class="headerMenu"></div>
+      <div class="headerMenu"></div>
+      <div class="headerMenu"><span class="headerText">SpeiseKarte</span></div>
+      <div class="headerMenu"></div>
     </div>
     <main>
-        <div class="width">
-            <div class="content"></div>
-            <div class="test">
-                <span class="add" role="button">+</span>
-                <div class="test1">
-                    <span class="test2">Pizza</span>
-                    <span class="test2">5.99 €</span>
-                </div>
+      <div class="width">
+        <div class="content"></div>
+        <div id="menuPost"></div>
+      </div>
+
+      <div class="shoppingCartList">
+        <span class="name">WarenKorb</span>
+        <div class="cart">
+          <span class="cartAmount">1</span>
+          <div class="cartItemList">
+            <div class="cartNames">
+              <span class="cartItemName">Pizza</span>
+              <span class="cartItemPrice">4,99 €</span>
             </div>
-            <div class="test">
-                <span class="add" role="button">+</span>
-                <div class="test1">
-                    <span class="test2">cheese</span>
-                    <span class="test2">5.99 €</span>
-                </div>
+
+            <div class="cartContent">
+              <div class="cartItemRemove" role="button">-</div>
+              <span class="cartAmount">1</span>
+              <div class="cartItemRAdd" role="button">+</div>
             </div>
+          </div>
         </div>
-
-        <div class="shoppingCartList">
-            <span class="name">WarenKorb</span>
-            <div class="cart">
-                <span class="cartAmount">1</span>
-                <div class="cartItemList">
-                    <div class="cartNames">
-                        <span class="cartItemName">Pizza</span>
-                        <span class="cartItemPrice">4,99 €</span>
-                    </div>
-
-                    <div class="cartContent">
-                        <div class="cartItemRemove" role="button">-</div>
-                        <span class="cartAmount">1</span>
-                        <div class="cartItemRAdd" role="button">+</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </main>
-    <main>
-
-    </main>
-
-</body>
-
+    <main></main>
+  </body>
 </html>

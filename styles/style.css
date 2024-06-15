@@ -51,7 +51,6 @@ main {
 .test {
     display: flex;
     height: 100px;
-    margin: 1px;
     background-color: black;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -61,7 +60,7 @@ main {
 .test1 {
     display: flex;
     width: 90%;
-    height: 50px;
+    height: 80px;
     margin: 0px 10px;
     background-color: rgb(255, 255, 255);
     justify-content: center;
@@ -71,11 +70,10 @@ main {
 
 .test2 {
     display: flex;
-    width: 50px;
+    width: auto;
     height: 30px;
     margin: 0px 10px;
     align-items: center;
-    justify-content: center;
     align-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
