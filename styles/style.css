@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     scroll-behavior: smooth;
     background: none;
 }
+
 main {
     display: flex;
 }
@@ -46,10 +47,159 @@ main {
     background-size: cover;
 }
 
-.shoppingCart {
+
+.test {
+    display: flex;
+    height: 100px;
+    margin: 1px;
+    background-color: black;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.test1 {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    margin: 0px 10px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-content: flex-start;
+    flex-direction: column;
+}
+
+.test2 {
+    display: flex;
+    width: 50px;
+    height: 30px;
+    margin: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.add {
+    display: flex;
+    width: 50px;
+    height: 30px;
+    margin: 0px 10px;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    font-size: xxx-large;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.add:hover {
+    background-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shoppingCartList {
     min-width: 350px;
     max-width: 350px;
-    width: 35%;
-    height: 100vh;
-    background-color: rgb(0, 3, 3);
+    height: auto;
+    background-color: rgb(163, 238, 238);
+    padding: 5px;
+    border-left: solid 2px rgb(107, 0, 0);
+}
+
+.width {
+    width: 100%;
+    padding: 5px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+
+
+.cart {
+    display: flex;
+}
+
+.cartItemList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cartNames {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 5px;
+}
+
+.cartItemName {
+    width: auto;
+    height: auto;
+}
+.cartItemPrice{
+    width: auto;
+    height: auto;
+}
+
+
+
+.cartContent {
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: brown;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cartAmount  {    
+    margin: 0px 12px 0px 0px;
+    background-color: #28f000; 
+}
+
+.cartItemRemove  {    
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #aaa9a9;
+    align-items: center;
+    justify-content: center;
+
+}
+.cartItemRemove:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.cartItemRAdd  {    
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #aaa9a9;
+    align-items: center;
+    justify-content: center;
+
+}
+.cartItemRAdd:hover {
+    background-color: green;
+    cursor: pointer;
 }
