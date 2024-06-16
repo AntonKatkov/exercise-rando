@@ -5,6 +5,7 @@
     background: none;
     cursor: default;
     font-weight: 700;
+
 }
 img {
     width: 130px;
@@ -30,7 +31,6 @@ main {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 10px 5px rgb(0 0 0 / 15%);
-    padding: 10px;
 
 }
 
@@ -128,9 +128,10 @@ main {
     min-width: 350px;
     max-width: 350px;
     height: auto;
-    background-color: #ffffff;
+    background-color: whitesmoke;
     padding: 5px;
     border-left: solid 2px rgb(107, 0, 0);
+    overflow-x: hidden;
 }
 
 .shoppingCart {
@@ -144,6 +145,8 @@ main {
     width: 100%;
     max-width: 350px;
     background-color: whitesmoke;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
 }
 
 .mainContent {
@@ -155,11 +158,15 @@ main {
     align-items: center;
     justify-content: center;
     margin: 25px;
+    box-shadow: 0 3px 0px rgb(0 0 0 / 10%);
 }
 
 
 .cart {
     display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 100vh;
 }
 
 .cartItemList {
