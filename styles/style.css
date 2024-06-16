@@ -6,6 +6,7 @@
     cursor: default;
     font-weight: 700;
 
+
 }
 img {
     width: 130px;
@@ -234,4 +235,46 @@ main {
 .cartItemRAdd:hover {
     background-color: green;
     cursor: pointer;
+}
+
+.shopingbag {
+    width: 25px;
+    height: 25px;
+}
+
+.menu{
+    padding: 0px 0px 0px 25px;
+}
+.menu,a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.menuBagpack{
+    max-width: 25px;
+    max-height: 25px;
+}
+.menuList{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}   
+.RestaurantLogo{
+    width: 100px;
+    height: 100px;
+
+}
+.RestaurantLogo,img{
+    border-radius: 15px 15px 15px 15px;
+}
+.mincard{
+    display: flex;
+    align-items: center;
+}
+.rate{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
