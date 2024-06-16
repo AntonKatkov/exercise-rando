@@ -18,7 +18,7 @@ function returnHTML(menuliste, i) {
 function renderCard(addToCart ,i) {
   return /*html*/ `
   <div id="cart${i}">
-  <span class="cartAmount">${i+1}</span>
+  <span class="cartAmount">Menu ${i+1}</span>
           <div class="cartItemList">
             <div class="cartNames">
               <span class="cartItemName">${addToCart.ItemName}</span>
@@ -26,7 +26,7 @@ function renderCard(addToCart ,i) {
             </div>
 
             <div class="cartContent">
-              <div class="cartItemRemove" role="button">-</div>
+              <div onclick="remove(${i})" class="cartItemRemove" role="button">-</div>
               <span class="cartAmount">${addToCart.ammount}</span>
               <div onclick="addItems(${i})" class="cartItemRAdd" role="button">+</div>
             </div>

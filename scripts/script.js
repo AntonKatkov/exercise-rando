@@ -17,53 +17,42 @@ function add(i) {
   addToCart.ammount += 1;
 
   let cartContent = document.getElementById("shoppingCart");
-  cartContent.innerHTML += renderCard(addToCart, i);
+  let existingItem = document.getElementById("cart" + i);
+  if (existingItem) {
+    existingItem.outerHTML = renderCard(addToCart, i);
+  } else {;
+    let newItem = document.createElement("div");
+    newItem.id = "cart" + i;
+    newItem.innerHTML = renderCard(addToCart, i);
+    cartContent.appendChild(newItem);
+  }
+
 }
 
 function addItems(i) {
-
   let addToCart = menu[i];
   addToCart.ammount += 1;
-
   let cartContent = document.getElementById(`cart${i}`);
   cartContent.innerHTML = renderCard(addToCart, i);
+}
+function remove(i) {
+  let cartContent = document.getElementById(`cart${i}`);
+  let addToCart = menu[i];
+  addToCart.ammount -= 1;
+
+  if (addToCart.ammount < 1) {
+    addToCart.ammount = 0; 
+    if (cartContent) {
+      cartContent.remove();
+    }
+  } else {
+    if (cartContent) {
+      cartContent.innerHTML = renderCard(addToCart, i);
+    }
+  }
+
 }
 
 
 
 
-//  Konstrollstrukturen
-
-//  if-anweisung
-
-// const mindestalter = 18;
-// let benutzer_eingabe = 17;
-
-// if (benutzer_eingabe >= mindestalter) {
-//   console.log("Du bist alt genug!");
-// }
-
-//  if-else anweisung
-
-// const mindestalter = 18;
-// let benutzer_eingabe = 42;
-
-// if (benutzer_eingabe >= mindestalter) {
-//   if (benutzer_eingabe == mindestalter) {
-//     console.log("Du bist grade alt genug!");
-//   } else {
-//     console.log("Du bist alt genug!");
-//   }
-// } else {
-//   console.log("Du bist noch nicht alt genug!");
-// }
-
-//  else-if anweisung
-
-// if (benutzer_eingabe == mindestalter) {
-//   console.log("Du bist grade alt genug!");
-// } else if (benutzer_eingabe > mindestalter) {
-//   console.log("Du bist alt genug!");
-// } else {
-//   console.log("Du bist noch nicht alt genug!");
-// }
