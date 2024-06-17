@@ -5,7 +5,8 @@ let menu = [
         "ItemPrice": 8.00,
         "description": "Pizza Salami mit Käse",
         "img": "./img/pizza.png",
-        "ammount": 0,
+        "ammount": 0.00,
+        "totalPrice": 0.00,
      },
      {
         "ItemName": "Pizza Tonno",
@@ -13,6 +14,7 @@ let menu = [
         "description": "Pizza mit Thunfisch und Peperoni",
         "img": "./img/pizza.png",
         "ammount": 0,
+        "totalPrice": 0.00,
      },
      {
         "ItemName": "Pizza Diablo",
@@ -20,6 +22,7 @@ let menu = [
         "description": "Pizza mit Chilli, Herzhaft scharf",
         "img": "./img/pizza.png",
         "ammount": 0,
+        "totalPrice": 0.00,
      },
      {
         "ItemName": "Pizza Vegan",
@@ -27,6 +30,7 @@ let menu = [
         "description": "Pizza mit verschiedenem Gemüse",
         "img": "./img/pizza.png",
         "ammount": 0,
+        "totalPrice": 0.00,
      },
      {
         "ItemName": "Salat",
@@ -34,6 +38,7 @@ let menu = [
         "description": "Mischsalat mit Hausdressing",
         "img": "./img/salad.png",
         "ammount": 0,
+        "totalPrice": 0.00,
      },
      {
         "ItemName": "Coke",
@@ -41,6 +46,7 @@ let menu = [
         "description": "Getränk Cola aus den Kühlschrank",
         "img": "./img/coke.png",
         "ammount": 0,
+        "totalPrice": 0.00,
      },
 
     

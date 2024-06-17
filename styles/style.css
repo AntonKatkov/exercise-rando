@@ -5,15 +5,15 @@
     background: none;
     cursor: default;
     font-weight: 700;
-
-
 }
+
 img {
     width: 130px;
     height: 130px;
     user-select: none;
     margin: 10px;
 }
+
 .logo {
     width: auto;
     height: 50px;
@@ -70,7 +70,7 @@ main {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    border-style: groove;    
+    border-style: groove;
     border-width: 2px;
     border-radius: 5px;
     margin: 10px;
@@ -88,7 +88,8 @@ main {
 }
 
 
-.test2 {    display: flex;
+.test2 {
+    display: flex;
     width: auto;
     margin: 0px 10px;
     align-items: baseline;
@@ -122,7 +123,7 @@ main {
 .add:active {
     background-color: green;
     transform: translateY(4px);
-  }
+}
 
 
 .shoppingCartList {
@@ -166,7 +167,6 @@ main {
 .cart {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
     max-height: 100vh;
 }
 
@@ -187,12 +187,11 @@ main {
     width: auto;
     height: auto;
 }
-.cartItemPrice{
+
+.cartItemPrice {
     width: auto;
     height: auto;
 }
-
-
 
 .cartContent {
     display: flex;
@@ -204,12 +203,11 @@ main {
     gap: 100px;
 }
 
-.cartAmount  {    
+.cartAmount {
     margin: 0px 12px 0px 0px;
-    background-color: #28f000; 
 }
 
-.cartItemRemove  {    
+.cartItemRemove {
     display: flex;
     width: 50px;
     height: 50px;
@@ -218,12 +216,13 @@ main {
     justify-content: center;
 
 }
+
 .cartItemRemove:hover {
     background-color: red;
     cursor: pointer;
 }
 
-.cartItemRAdd  {    
+.cartItemRAdd {
     display: flex;
     width: 50px;
     height: 50px;
@@ -232,6 +231,7 @@ main {
     justify-content: center;
 
 }
+
 .cartItemRAdd:hover {
     background-color: green;
     cursor: pointer;
@@ -242,39 +242,77 @@ main {
     height: 25px;
 }
 
-.menu{
+.menu {
     padding: 0px 0px 0px 25px;
 }
-.menu,a{
+
+.menu,
+a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-size: x-large;
 }
 
-.menuBagpack{
+.menuBagpack {
     max-width: 25px;
     max-height: 25px;
 }
-.menuList{
+
+.menuList {
     display: flex;
     align-items: center;
-    justify-content: center; 
-}   
-.RestaurantLogo{
+    justify-content: center;
+}
+
+.RestaurantLogo {
     width: 100px;
     height: 100px;
 
 }
-.RestaurantLogo,img{
+
+.RestaurantLogo,
+img {
     border-radius: 15px 15px 15px 15px;
 }
-.mincard{
+
+.mincard {
     display: flex;
     align-items: center;
 }
-.rate{
+
+.rate {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.buybutton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+
+
+.buybutton:hover {
+    background-color: #3e8e41;
+}
+
+.buybutton:active {
+    background-color: green;
+    transform: translateY(4px);
+}
+.shoppingCartHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
