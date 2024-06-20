@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/mobile.css" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
 
     <script src="./scripts/info.js"></script>
@@ -18,10 +19,12 @@
       <div class="headerMenu">
         <a href=""><img class="logo" src="img/logo.png" alt="" /></a>
       </div>
-      <div class="headerMenu">
-        <span class="headerText"><h1>Exercise-Rando</h1> </span>
+      <div class="headerMenu ">
+        <span class="headerText desktop-show"><h1>Exercise-Rando</h1> </span>
       </div>
-      <div class="headerMenu"></div>
+      <div class="headerMenu">
+        <span class="headerText mobile-hide"><button onclick="shoppingCartExit()">Warenkorb</button></span>
+      </div>
     </div>
     <main>
       <div class="mainContent">
@@ -52,7 +55,7 @@
         <div class="menuPosts" id="menuPost"></div>
       </div>
 
-      <div class="shoppingCartList" id="shoppingCartList">
+      <div class="shoppingCartList mobile-hide" id="shoppingCartList">
         
 
 

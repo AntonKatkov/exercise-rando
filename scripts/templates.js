@@ -5,7 +5,7 @@ function returnHTML(menuliste, i) {
             <img src=${menuliste.img} alt="">
             <div class="test1">
             <span class="test2"><h2>${menuliste.ItemName}</span></h2>
-            <span class="test2">${menuliste.description}</span>
+            <span class="test2 desktop-show">${menuliste.description}</span>
                 <span class="test2"><h3>${menuliste.ItemPrice.toFixed(
                   2
                 ).replace(/\./, ",")} €<h3></span>
@@ -17,7 +17,7 @@ function returnHTML(menuliste, i) {
 function renderCartHeader(totalPrice) {
   let subtotal = totalPrice.toFixed(2).replace(".", ",");
   return /*html*/ `
-    <div class="shoppingCartHeader">
+    <div class="shoppingCartHeader mobile-hide">
       <span class="name">
         <img class="shopingbag" src="img/backpng.png" alt="" />WarenKorb
       </span>
@@ -36,7 +36,7 @@ function shopRender() {
   }
 
   return /*html*/ `
-    <div class="shoppingCart">
+    <div class="shoppingCart mobile-hide">
       ${renderCartHeader(totalPrice)}
       <div id="shoppingCart">
         ${renderCartItems()}

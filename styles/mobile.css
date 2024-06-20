@@ -1,0 +1,81 @@
+/* Standardmäßig werden Mobil-spezifische Elemente ausgeblendet und Desktop-spezifische Elemente angezeigt */
+.mobile-hide {
+    display: none;
+}
+
+.desktop-show {
+    display: block;
+    /* oder flex, inline etc., je nach Bedarf */
+}
+/* Für sehr kleine Bildschirme bis 320px */
+@media (max-width: 385px) {
+    .mobile-hide {
+        display: block;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: none;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+    .test2 {
+        margin: 0px 5px;
+    }
+    main {
+        flex-direction: column;
+    }
+    .shoppingCartList {
+        min-width: 100%;
+        padding: 0px;
+    }
+    .content {
+        max-height: 250px;
+    }
+    .menu {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 0px;
+    }
+    .menu,a{
+        font-size: large;
+    }
+
+
+
+}
+/* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
+@media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: none;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+ 
+
+}
+
+/* Große Geräte (Desktops, 1024px und darüber) */
+@media (min-width: 769px) and (max-width: 996px) {
+    
+}
+
+/* Sehr große Geräte (große Desktops, 1200px und darüber) */
+@media (min-width: 996px) and (max-width: 1300px) {
+
+
+}
+
+/* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
+@media only screen and (min-width: 1034px) {
+
+
+}
