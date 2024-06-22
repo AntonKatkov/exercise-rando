@@ -1,12 +1,9 @@
 function Start() {
-  load(); // Load menu and basketMenu from localStorage
-  render(); // Render menu
-  renderCartItems(); // Render cart items
+  load();
+  render();
+  renderCartItems();
 }
 
-
-
-  // Eventlistener für Buy-Button
 function render() {
   let content = document.getElementById("menuPost");
   content.innerHTML = "";
@@ -18,82 +15,78 @@ function render() {
 }
 
 function addToCartItem(i) {
-  updateCartItem(menu[i], i, 1);
+  let item = basketMenu.find(item => item.ItemName === menu[i].ItemName);
+  if (item) {
+    updateCartItem(item, 1);
+  } else {
+    addItemToBasket(i);
+  }
   showPlusOne();
+  save();
+  renderCartItems();
 }
 
+function addItemToBasket(i) {
+  let newItem = {
+    ItemName: menu[i].ItemName,
+    ItemPrice: menu[i].ItemPrice,
+    description: menu[i].description,
+    img: menu[i].img,
+    amount: 1,
+    totalPrice: menu[i].ItemPrice,
+  };
+  basketMenu.push(newItem);
+  updateCartItemHTML(newItem, basketMenu.length - 1);
+}
 
-function remove(i) {
-  let itemIndex = basketMenu.findIndex(item => item.ItemName === basketMenu[i].ItemName);
-  if (itemIndex !== -1) {
-      if (basketMenu[itemIndex].amount > 1) {
-          basketMenu[itemIndex].amount--;
-          basketMenu[itemIndex].totalPrice = basketMenu[itemIndex].amount * basketMenu[itemIndex].ItemPrice;
-          updateCartItemHTML(basketMenu[itemIndex], itemIndex);
-      } else {
-          basketMenu.splice(itemIndex, 1);
-          removeCartItemHTML(itemIndex);
-      }
+function updateCartItem(item, amount) {
+  item.amount += amount;
+  item.totalPrice = item.amount * item.ItemPrice;
+  if (item.amount === 0) {
+    removeItem(item);
+  } else {
+    updateCartItemHTML(item, basketMenu.indexOf(item));
   }
   save();
   renderCartItems();
 }
 
-
-
+function removeItem(item) {
+  let index = basketMenu.indexOf(item);
+  removeCartItemHTML(index);
+  basketMenu.splice(index, 1);
+}
 
 function addItems(i) {
   let itemIndex = basketMenu.findIndex(item => item.ItemName === basketMenu[i].ItemName);
   if (itemIndex !== -1) {
-      basketMenu[itemIndex].amount++;
-      basketMenu[itemIndex].totalPrice = basketMenu[itemIndex].amount * basketMenu[itemIndex].ItemPrice;
-      updateCartItemHTML(basketMenu[itemIndex], itemIndex);
+    basketMenu[itemIndex].amount++;
+    basketMenu[itemIndex].totalPrice = basketMenu[itemIndex].amount * basketMenu[itemIndex].ItemPrice;
+    updateCartItemHTML(basketMenu[itemIndex], itemIndex);
   }
   save();
+  renderCartItems();
 }
 
-
-
-
-function addToCartItem(i) {
-  let itemInBasket = basketMenu.find(item => item.ItemName === menu[i].ItemName);
-  if (itemInBasket) {
-    updateCartItem(itemInBasket, 1); // Update the existing item in the basket
-  } else {
-    basketMenu.push({
-      ItemName: menu[i].ItemName,
-      ItemPrice: menu[i].ItemPrice,
-      description: menu[i].description,
-      img: menu[i].img,
-      amount: 1,
-      totalPrice: menu[i].ItemPrice,
-    });
-    console.log("Neues Element hinzugefügt:", basketMenu[basketMenu.length - 1]); // Debugging
-    updateCartItemHTML(basketMenu[basketMenu.length - 1], basketMenu.length - 1); // HTML für das letzte Element aktualisieren
+function remove(i) {
+  let itemIndex = basketMenu.findIndex(item => item.ItemName === basketMenu[i].ItemName);
+  if (itemIndex !== -1) {
+    updateOrRemoveItem(itemIndex);
   }
-  showPlusOne();
   save();
+  renderCartItems();
 }
 
-
-
-function updateCartItem(item, amount) {
-  item.amount += amount; // Die Menge des Elements aktualisieren
-  item.totalPrice = item.amount * item.ItemPrice; // Den Gesamtpreis aktualisieren
-
-  if (item.amount === 0) {
-    removeCartItemHTML(basketMenu.indexOf(item)); // Element aus dem Warenkorb entfernen
-    basketMenu.splice(basketMenu.indexOf(item), 1); // Element aus dem Array entfernen
+function updateOrRemoveItem(index) {
+  if (basketMenu[index].amount > 1) {
+    basketMenu[index].amount--;
+    basketMenu[index].totalPrice = basketMenu[index].amount * basketMenu[index].ItemPrice;
+    updateCartItemHTML(basketMenu[index], index);
   } else {
-    updateCartItemHTML(item, basketMenu.indexOf(item)); // HTML für das aktualisierte Element aktualisieren
+    basketMenu.splice(index, 1);
+    removeCartItemHTML(index);
   }
-
-
-  save(); // Speichern im localStorage
 }
-
-
-
 
 function updateCartItemHTML(item, i) {
   let existingItem = document.getElementById("cart" + i);
@@ -109,8 +102,6 @@ function updateCartItemHTML(item, i) {
   }
 }
 
-
-
 function removeCartItemHTML(i) {
   let existingItem = document.getElementById("cart" + i);
   if (existingItem) {
@@ -118,19 +109,13 @@ function removeCartItemHTML(i) {
   }
 }
 
-function updateShopingCartHeader() {
-  let cartTotal = 0;
-  for (let i = 0; i < menu.length; i++) {
-    cartTotal += menu[i].ammount;
-  }
-  let cartContent = document.getElementById("shoppingCartList");
-  if (cartContent) {
-    cartContent.innerHTML = shopRender();
-  }
-}
+
 function renderCartItems() {
   let cartContainer = document.getElementById("shoppingCart");
-  cartContainer.innerHTML = ""; // Clear the existing content
+  cartContainer.innerHTML = "";
+
+  let totalPrice = basketMenu.reduce((sum, item) => sum + item.totalPrice, 0);
+  cartContainer.innerHTML = renderCartHeader(totalPrice);
 
   for (let i = 0; i < basketMenu.length; i++) {
     let item = basketMenu[i];
@@ -138,40 +123,25 @@ function renderCartItems() {
   }
 }
 
-
-
-
-
 function shoppingCartExit() {
-  for (let i = 0; i < basketMenu.length; i++) {
-    basketMenu[i].amount = 0;
-    basketMenu[i].totalPrice = 0;
-  }
-
-  let shoppingCart = document.getElementById("shoppingCartList");
-  shoppingCart.innerHTML = shopRender(); // Funktion shopRender() muss definiert werden oder verwendet werden, um den Einkaufswagen zu rendern
+  basketMenu.forEach(item => {
+    item.amount = 0;
+    item.totalPrice = 0;
+  });
+  document.getElementById("shoppingCartList").innerHTML = shopRender();
 }
 
 function buy() {
-  let totalPrice = 0;
-  for (let i = 0; i < basketMenu.length; i++) {
-    totalPrice += basketMenu[i].totalPrice;
-  }
+  let totalPrice = basketMenu.reduce((sum, item) => sum + item.totalPrice, 0);
 
-  if (totalPrice < 15) {
-    alert(
-      "Sie haben noch keine Artikel ausgewählt. Mindestbestellwert beträgt 10 €."
-    );
+  if (totalPrice < 10) {
+    alert("Der Mindestbestellwert beträgt 10 €.");
   } else {
     alert("Vielen Dank für Ihre Bestellung!");
     clearBasket();
-    shoppingCartExit();
     closeCart();
-    
   }
 }
-
-
 
 function clearBasket() {
   basketMenu = [];
@@ -179,30 +149,9 @@ function clearBasket() {
     item.amount = 0;
     item.totalPrice = 0;
   });
-  save(); // Speichern im localStorage
-  renderCartItems(); // Warenkorb neu rendern
+  save();
+  renderCartItems();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function showPlusOne() {
   const plusOneElement = document.getElementById("plusOne");
@@ -210,54 +159,21 @@ function showPlusOne() {
 
   setTimeout(() => {
     plusOneElement.classList.remove("show");
-  }, 1000); // 1 Sekunde anstatt 30 Sekunden
+  }, 1000);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function save() {
   localStorage.setItem("basketMenu", JSON.stringify(basketMenu));
   localStorage.setItem("menu", JSON.stringify(menu));
 }
 
-
 function load() {
   let basketMenuAsText = localStorage.getItem("basketMenu");
   let menuAsText = localStorage.getItem("menu");
 
-  if (basketMenuAsText) {
-    basketMenu = JSON.parse(basketMenuAsText);
-  }
+  if (basketMenuAsText) basketMenu = JSON.parse(basketMenuAsText);
+  if (menuAsText) menu = JSON.parse(menuAsText);
 
-  if (menuAsText) {
-    menu = JSON.parse(menuAsText);
-  }
-
-  render(); // Menü neu rendern
-  updateShopingCartHeader(); // Warenkorb-Header aktualisieren
-  renderCartItems(); // Warenkorbartikel neu rendern
+  render();
+  renderCartItems();
 }
-
-

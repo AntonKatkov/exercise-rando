@@ -10,6 +10,12 @@
         display: none;
     }
 
+    .posi {
+        position: fixed;
+        width: 98%;
+        background: whitesmoke;
+    }
+
     .shoppingCartList {
         display: none;
         position: fixed;
@@ -26,17 +32,13 @@
     }
 
     .shoppingCartList .cartContent {
-        display: flex;
         background-color: #fff;
-        /* Weißer Hintergrund */
         margin: 5px auto;
-        /* Zentrieren des Inhalts */
         padding: 5px;
         height: 10%;
-        width: 80%;
-        /* Breite des Inhalts */
+        width: 90%;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        /* Schatteneffekt */
+        align-items: center;
     }
 
     .shoppingCartList.show {
@@ -94,6 +96,7 @@
     .cartItemRemove {
         background-color: red;
     }
+
     .buyButton {
         position: fixed;
         top: 20px;
@@ -109,9 +112,10 @@
         z-index: 1000;
         transition: background-color 0.3s ease;
     }
-    
+
     .buyButton:hover {
-      background-color: #45a049; /* Hintergrundfarbe beim Hover */
+        background-color: #45a049;
+        /* Hintergrundfarbe beim Hover */
     }
 }
 
@@ -122,6 +126,12 @@
 
     .desktop-show {
         display: none;
+    }
+
+    .posi {
+        position: fixed;
+        width: 98%;
+        background: whitesmoke;
     }
 
     .shoppingCartList {
@@ -220,6 +230,7 @@
     .cartItemRemove {
         background-color: red;
     }
+
     .buyButton {
         position: fixed;
         top: 20px;
@@ -235,11 +246,12 @@
         z-index: 1000;
         transition: background-color 0.3s ease;
     }
-    
+
     .buyButton:hover {
-      background-color: #45a049; /* Hintergrundfarbe beim Hover */
+        background-color: #45a049;
+        /* Hintergrundfarbe beim Hover */
     }
-    
+
 }
 
 @media (min-width: 769px) and (max-width: 996px) {
@@ -252,6 +264,7 @@
     }
 
 }
+
 /* Sehr große Geräte (große Desktops, 1200px und darüber) */
 @media (min-width: 996px) and (max-width: 1300px) {
 
@@ -263,6 +276,7 @@
         display: block;
     }
 }
+
 /* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
 @media only screen and (min-width: 1034px) {
     .mobile-hide {

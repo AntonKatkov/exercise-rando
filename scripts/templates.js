@@ -24,12 +24,13 @@ function renderCartHeader(totalPrice) {
         <span>Min: 10,00€</span>
         <span>Zwischensumme: ${subtotal} €</span>
         <span>Lieferkosten: 5 €</span>
-        <span>Total: ${(totalPrice + 15).toFixed(2).replace(".", ",")} €</span>
+        <span>Total: ${(totalPrice + 5).toFixed(2).replace(".", ",")} €</span>
         <div role="button" class="buybutton" onclick="buy()">Kaufen</div>
       </div>
     </div>
   `;
 }
+
 
 function shopRender() {
   let totalPrice = 0;

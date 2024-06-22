@@ -6,6 +6,12 @@
     cursor: default;
     font-weight: 700;
 }
+.no-select {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard */
+}
 
 img {
     width: 130px;
@@ -316,7 +322,7 @@ img {
 .shoppingCartHeader {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 .noBreak {
@@ -372,7 +378,7 @@ img {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 20px;
-    z-index: 1001; /* Ensure it's above other content */
+    z-index: 1001; 
     transition: opacity 0.5s ease-in-out;
   }
   
@@ -380,6 +386,12 @@ img {
     display: block;
     opacity: 1;
   }
+
+  .posi{
+    position: fixed;
+    width: 350px;
+}
+  
 
 
 
