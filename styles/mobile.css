@@ -1,7 +1,7 @@
 /* mobile.css */
 
-  /* Für sehr kleine Bildschirme bis 320px */
-  @media (max-width: 320px) {
+/* Für sehr kleine Bildschirme bis 320px */
+@media (max-width: 320px) {
     .mobile-hide {
         display: block;
     }
@@ -9,15 +9,53 @@
     .desktop-show {
         display: none;
     }
+
+    .shoppingCartList {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Halbtransparentes Schwarz */
+        z-index: 1000;
+        /* Über allen anderen Inhalten */
+        overflow: auto;
+        /* Bei Bedarf scrollen */
+    }
+
+    .shoppingCartList .cartContent {
+        display: flex;
+        background-color: #fff;
+        /* Weißer Hintergrund */
+        margin: 5px auto;
+        /* Zentrieren des Inhalts */
+        padding: 5px;
+        height: 10%;
+        width: 80%;
+        /* Breite des Inhalts */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* Schatteneffekt */
+    }
+
+    .shoppingCartList.show {
+        display: block;
+    }
+
+
     .test2 {
         margin: 0px 5px;
     }
+
     main {
         flex-direction: column;
     }
+
     .content {
         max-height: 250px;
     }
+
     .menu {
         display: flex;
         flex-direction: column;
@@ -26,111 +64,185 @@
         justify-content: center;
         padding: 0px;
     }
-    .menu, a {
+
+    .menu,
+    a {
         font-size: large;
     }
-    .shoppingCartList {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
-      z-index: 1000; /* Über allen anderen Inhalten */
-      overflow: auto; /* Bei Bedarf scrollen */
-    }
-    
-    .shoppingCartList .cartContent {
-      display: flex;
-      background-color: #fff; /* Weißer Hintergrund */
-      margin: 5px auto; /* Zentrieren des Inhalts */
-      padding: 5px;
-      height: 10%;
-      width: 80%; /* Breite des Inhalts */
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
-    }
-    
-    .shoppingCartList.show {
-      display: block;
-    }
-    .shoppingCart{
-      max-width: 320px;
-    }
-    .buybutton {
-      max-width: 97%;
-      text-align: center;
-    }
-    .cartNames {
-      justify-content: space-around;
-    }
-    
 
-  }
-  
-  @media (min-width: 321px) and (max-width: 768px) {
-    .mobile-hide {
-        display: block;
+    .shoppingCart {
+        max-width: 320px;
     }
 
-    .desktop-show {
-        display: none;
-    }
-    .test2 {
-        margin: 0px 5px;
-    }
-    main {
-        flex-direction: column;
-    }
-    .content {
-        max-height: 250px;
-    }
-    .menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        padding: 0px;
-    }
-    .menu, a {
-        font-size: large;
-    }
-    .shoppingCartList {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
-      z-index: 1000; /* Über allen anderen Inhalten */
-      overflow: auto; /* Bei Bedarf scrollen */
-    }
-    
-    .shoppingCartList .cartContent {
-      display: flex;
-      background-color: #fff; /* Weißer Hintergrund */
-      margin: 5px auto; /* Zentrieren des Inhalts */
-      padding: 5px;
-      height: 10%;
-      width: 80%; /* Breite des Inhalts */
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
-    }
-    
-    .shoppingCartList.show {
-      display: block;
-    }
-    .shoppingCart{
-      max-width: 320px;
-    }
     .buybutton {
-      max-width: 97%;
-      text-align: center;
+        max-width: 97%;
+        text-align: center;
     }
+
     .cartNames {
-      justify-content: space-around;
+        justify-content: space-around;
     }
-    
+
+    .name {
+        margin: 15px;
+    }
+
+    .cartItemRAdd {
+        background-color: green;
+    }
+
+    .cartItemRemove {
+        background-color: red;
+    }
 }
-  
+
+@media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+    }
+
+    .desktop-show {
+        display: none;
+    }
+
+    .shoppingCartList {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 99%;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Halbtransparentes Schwarz */
+        z-index: 1000;
+        /* Über allen anderen Inhalten */
+        overflow: auto;
+        /* Bei Bedarf scrollen */
+    }
+
+    .shoppingCartList .cartContent {
+        display: flex;
+        background-color: #fff;
+        /* Weißer Hintergrund */
+        margin: auto;
+        /* Zentrieren des Inhalts */
+        padding: 5px;
+        height: 10%;
+        width: 80%;
+        /* Breite des Inhalts */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* Schatteneffekt */
+    }
+
+    .shoppingCartList.show {
+        display: block;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .shoppingCartHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .test2 {
+        margin: 0px 5px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .content {
+        max-height: 250px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .menu,
+    a {
+        font-size: large;
+    }
+
+    .shoppingCart {
+        max-width: 99%;
+    }
+
+    .buybutton {
+        max-width: 97%;
+        text-align: center;
+    }
+
+    .cartNames {
+        justify-content: space-around;
+    }
+
+    .name {
+        margin: 15px;
+    }
+
+    .cartItemRAdd {
+        background-color: green;
+    }
+
+    .cartItemRemove {
+        background-color: red;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 996px) {
+    .mobile-hide {
+        display: none;
+    }
+
+    .desktop-show {
+        display: block;
+    }
+
+}
+@media (min-width: 769px) and (max-width: 996px) {
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .desktop-show {
+        display: block;
+    }
+
+
+}
+/* Sehr große Geräte (große Desktops, 1200px und darüber) */
+@media (min-width: 996px) and (max-width: 1300px) {
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .desktop-show {
+        display: block;
+    }
+}
+
+/* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
+@media only screen and (min-width: 1034px) {
+    .mobile-hide {
+        display: none;
+    }
+
+    .desktop-show {
+        display: block;
+    }
+
+}

@@ -15,19 +15,7 @@
 }
 
 /* Große Geräte (Desktops, 1024px und darüber) */
-@media (min-width: 769px) and (max-width: 996px) {
-    .mobile-hide {
-        display: none;
-        /* Versteckt Elemente auf Mobilgeräten */
-    }
 
-    .desktop-show {
-        display: block;
-        /* Versteckt Elemente, die nur für Desktop gedacht sind */
-    }
-
- 
-}
 
 /* Sehr große Geräte (große Desktops, 1200px und darüber) */
 @media (min-width: 996px) and (max-width: 1300px) {
@@ -59,3 +47,209 @@
 
 
 }
+
+@media (min-width: 769px) and (max-width: 996px) {
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .desktop-show {
+        display: block; 
+    }
+
+.shoppingCartList {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Bei Bedarf scrollen */
+  }
+  
+  .shoppingCartList .cartContent {
+    margin: 15% auto; /* Zentrieren des Inhalts */
+    padding: 20px;
+    width: 80%; /* Breite des Inhalts */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+  }
+  
+  .shoppingCartList.show {
+    display: block !important;
+  }
+
+  .cartItemRAdd{
+    background-color: green;
+}
+.cartItemRemove{
+    background-color: red;
+}
+
+.cartItemList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    justify-content: center;
+}
+.cartNames {
+    justify-content: space-around;
+}
+
+
+.shoppingCartList .cartContent {
+    display: flex;
+    margin:  auto; /* Zentrieren des Inhalts */
+    padding: 5px;
+    height: 10%;
+    width: 80%; /* Breite des Inhalts */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+  }
+  
+}
+@media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+    }
+
+    .desktop-show {
+        display: none;
+    }
+    
+    .test2 {
+        margin: 0px 5px;
+    }
+    main {
+        flex-direction: column;
+    }
+    .content {
+        max-height: 250px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 0px;
+    }
+    .menu, a {
+        font-size: large;
+    }
+    .shoppingCartList {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: 768px;
+      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+      z-index: 1000; /* Über allen anderen Inhalten */
+      overflow: auto; /* Bei Bedarf scrollen */
+    }
+    
+    .shoppingCartList .cartContent {
+      display: flex;
+      background-color: #fff; /* Weißer Hintergrund */
+      margin: 5px auto; /* Zentrieren des Inhalts */
+      padding: 5px;
+      height: 10%;
+      width: 80%; /* Breite des Inhalts */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+    }
+    
+    .shoppingCartList.show {
+      display: block; 
+    }
+    .shoppingCart{
+      max-width: 98%;
+    }
+    .buybutton {
+      max-width: 97%;
+      text-align: center;
+    }
+    .cartNames {
+      justify-content: space-around;
+    }
+    .cartItemRAdd{
+        background-color: green;
+    }
+    .cartItemRemove{
+        background-color: red;
+    }
+}
+@media (max-width: 320px) {
+    .mobile-hide {
+        display: block;
+    }
+
+    .desktop-show {
+        display: none;
+    }
+    .test2 {
+        margin: 0px 5px;
+    }
+    main {
+        flex-direction: column;
+    }
+    .content {
+        max-height: 250px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 0px;
+    }
+    .menu, a {
+        font-size: large;
+    }
+    .shoppingCartList {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+      z-index: 1000; /* Über allen anderen Inhalten */
+      overflow: auto; /* Bei Bedarf scrollen */
+    }
+    
+    .shoppingCartList .cartContent {
+      display: flex;
+      background-color: #fff; /* Weißer Hintergrund */
+      margin: 5px auto; /* Zentrieren des Inhalts */
+      padding: 5px;
+      height: 10%;
+      width: 80%; /* Breite des Inhalts */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+    }
+    
+    .shoppingCartList.show {
+      display: block;
+    }
+    .shoppingCart{
+      max-width: 320px;
+    }
+    .buybutton {
+      max-width: 97%;
+      text-align: center;
+    }
+    .cartNames {
+      justify-content: space-around;
+    }
+    .name{
+        margin: 15px;
+    }
+    .cartItemRAdd{
+        background-color: green;
+    }
+    .cartItemRemove{
+        background-color: red;
+    }
+    
+
+  }
+  

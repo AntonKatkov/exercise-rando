@@ -323,7 +323,7 @@ img {
     font-size: 28px;
     font-weight: bold;
     position: relative;
-    padding-right: 20px;
+    padding-left: 150px;
     transition: color 0.2s;
 }
 .close:hover,
@@ -349,3 +349,29 @@ img {
 .close:focus::after {
     opacity: 1;
 }
+.subtotal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.plus-one {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    z-index: 1001; /* Ensure it's above other content */
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .plus-one.show {
+    display: block;
+    opacity: 1;
+  }
