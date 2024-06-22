@@ -94,6 +94,25 @@
     .cartItemRemove {
         background-color: red;
     }
+    .buyButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+    }
+    
+    .buyButton:hover {
+      background-color: #45a049; /* Hintergrundfarbe beim Hover */
+    }
 }
 
 @media (min-width: 321px) and (max-width: 768px) {
@@ -124,15 +143,17 @@
     .shoppingCartList .cartContent {
         display: flex;
         background-color: #fff;
-        /* Weißer Hintergrund */
         margin: auto;
-        /* Zentrieren des Inhalts */
         padding: 5px;
         height: 10%;
         width: 80%;
-        /* Breite des Inhalts */
+        display: flex;
+        width: auto;
+        height: auto;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        /* Schatteneffekt */
+        align-items: center;
+        justify-content: space-around;
+        gap: 100px;
     }
 
     .shoppingCartList.show {
@@ -199,6 +220,26 @@
     .cartItemRemove {
         background-color: red;
     }
+    .buyButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+    }
+    
+    .buyButton:hover {
+      background-color: #45a049; /* Hintergrundfarbe beim Hover */
+    }
+    
 }
 
 @media (min-width: 769px) and (max-width: 996px) {

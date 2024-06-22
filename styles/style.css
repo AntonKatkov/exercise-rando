@@ -32,7 +32,12 @@ main {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 10px 5px rgb(0 0 0 / 15%);
+    font-size: 24px;
 
+}
+.headerCart {
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .headerMenu {
@@ -197,7 +202,7 @@ main {
     display: flex;
     width: auto;
     height: auto;
-    background-color: brown;
+    background-color: whitesmoke;
     align-items: center;
     justify-content: space-around;
     gap: 100px;
@@ -222,7 +227,7 @@ main {
     cursor: pointer;
 }
 
-.cartItemRAdd {
+.cartItemAdd {
     display: flex;
     width: 50px;
     height: 50px;
@@ -232,7 +237,7 @@ main {
 
 }
 
-.cartItemRAdd:hover {
+.cartItemAdd:hover {
     background-color: green;
     cursor: pointer;
 }
@@ -375,3 +380,6 @@ img {
     display: block;
     opacity: 1;
   }
+
+
+

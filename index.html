@@ -10,6 +10,7 @@
     <script src="./scripts/info.js"></script>
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/hide&show.js"></script>
 
     <title>Lieferando</title>
   </head>
@@ -19,11 +20,11 @@
       <div class="headerMenu">
         <a href=""><img class="logo" src="img/logo.png" alt="" /></a>
       </div>
-      <div class="headerMenu ">
-        <span class="headerText desktop-show"><h1>Exercise-Rando</h1> </span>
+      <div class="headerMenu">
+        <span class="headerText desktop-show"><h1>Exercise-Rando</h1></span>
       </div>
       <div class="headerMenu">
-        <span class="headerText"><button onclick="cartMobile()">Warenkorb</button></span>
+        <div class="headerCart desktop-show" class="buyButton" onclick="cartMobile()">🛒</div>
         <div id="plusOne" class="plus-one">+1</div>
       </div>
     </div>
@@ -33,13 +34,13 @@
 
         <div class="menu">
           <img class="RestaurantLogo" src="img/laleRestaurant.jpg" alt="" />
-          <span><h1>Lale Restaurant</h1> </span>
+          <span><h1>Lale Restaurant</h1></span>
           <div>
             <div>
               <div class="">
                 <span class="rate" id="stars">
-                  <a href=""
-                    >⭐ 4,5
+                  <a href="">
+                    ⭐ 4,5
                     <h6>(55)</h6>
                   </a>
                 </span>
@@ -57,9 +58,9 @@
       </div>
 
       <div class="shoppingCartList" id="shoppingCartList">
+        <div id="shoppingCart"></div>
       </div>
-      </div>
+      <div class="buyButton mobile-hide" onclick="cartMobile()">🛒</div>
     </main>
-    <main></main>
   </body>
 </html>

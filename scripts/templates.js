@@ -12,11 +12,11 @@ function returnHTML(menuliste, i) {
   `;
 }
 
+
 function renderCartHeader(totalPrice) {
   let subtotal = totalPrice.toFixed(2).replace(".", ",");
   return /*html*/ `
     <div id="display" class="shoppingCartHeader">
-      <span class="close" onclick="closeCart()">&times;</span>
       <span class="name">
         <img class="shopingbag" src="img/backpng.png" alt="" />WarenKorb
       </span>
@@ -33,10 +33,9 @@ function renderCartHeader(totalPrice) {
 
 function shopRender() {
   let totalPrice = 0;
-  for (let i = 0; i < menu.length; i++) {
-    totalPrice += menu[i].totalPrice;
+  for (let i = 0; i < basketMenu.length; i++) { // Hier basketMenu verwenden
+    totalPrice += basketMenu[i].totalPrice;
   }
-
   return /*html*/ `
     <div id="shopCart" class="shoppingCart">
       ${renderCartHeader(totalPrice)}
@@ -47,19 +46,21 @@ function shopRender() {
   `;
 }
 
+
 function renderCartItem(addToCart, i) {
-  let totalPrice = addToCart.ammount * addToCart.ItemPrice;
+  let totalPrice = addToCart.amount * addToCart.ItemPrice;
   return /*html*/ `
     <div id="cart${i}" class="cartItemList">
       <div class="cartNames">
-        <span class="cartItemName">${addToCart.ammount} ${addToCart.ItemName}</span>
+        <span class="cartItemName">${addToCart.amount} ${addToCart.ItemName}</span> 
         <span class="cartItemPrice">${totalPrice.toFixed(2).replace(".", ",")} €</span>
       </div>
       <div class="cartContent">
         <div onclick="remove(${i})" class="cartItemRemove" role="button">-</div>
-        <span class="cartAmount">${addToCart.ammount}</span>
-        <div onclick="addItems(${i})" class="cartItemRAdd" role="button">+</div>
+        <span class="cartAmount">${addToCart.amount}</span> 
+        <div onclick="addItems(${i})" class="cartItemAdd" role="button">+</div>
       </div>
     </div>
   `;
 }
+
