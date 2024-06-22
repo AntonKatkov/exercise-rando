@@ -1,22 +1,13 @@
-/* Standardmäßig werden Mobil-spezifische Elemente ausgeblendet und Desktop-spezifische Elemente angezeigt */
-.mobile-hide {
-    display: none;
-}
+/* mobile.css */
 
-.desktop-show {
-    display: block;
-    /* oder flex, inline etc., je nach Bedarf */
-}
-/* Für sehr kleine Bildschirme bis 320px */
-@media (max-width: 385px) {
+  /* Für sehr kleine Bildschirme bis 320px */
+  @media (max-width: 320px) {
     .mobile-hide {
         display: block;
-        /* Versteckt Elemente auf Mobilgeräten */
     }
 
     .desktop-show {
         display: none;
-        /* Versteckt Elemente, die nur für Desktop gedacht sind */
     }
     .test2 {
         margin: 0px 5px;
@@ -24,58 +15,122 @@
     main {
         flex-direction: column;
     }
-    .shoppingCartList {
-        min-width: 100%;
+    .content {
+        max-height: 250px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
         padding: 0px;
+    }
+    .menu, a {
+        font-size: large;
+    }
+    .shoppingCartList {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+      z-index: 1000; /* Über allen anderen Inhalten */
+      overflow: auto; /* Bei Bedarf scrollen */
+    }
+    
+    .shoppingCartList .cartContent {
+      display: flex;
+      background-color: #fff; /* Weißer Hintergrund */
+      margin: 5px auto; /* Zentrieren des Inhalts */
+      padding: 5px;
+      height: 10%;
+      width: 80%; /* Breite des Inhalts */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+    }
+    
+    .shoppingCartList.show {
+      display: block;
+    }
+    .shoppingCart{
+      max-width: 320px;
+    }
+    .buybutton {
+      max-width: 97%;
+      text-align: center;
+    }
+    .cartNames {
+      justify-content: space-around;
+    }
+    
+
+  }
+  
+  @media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+    }
+
+    .desktop-show {
+        display: none;
+    }
+    .test2 {
+        margin: 0px 5px;
+    }
+    main {
+        flex-direction: column;
     }
     .content {
         max-height: 250px;
     }
     .menu {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 0px;
     }
-    .menu,a{
+    .menu, a {
         font-size: large;
     }
-
-
-
-}
-/* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
-@media (min-width: 321px) and (max-width: 768px) {
-    .mobile-hide {
-        display: block;
-        /* Versteckt Elemente auf Mobilgeräten */
+    .shoppingCartList {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+      z-index: 1000; /* Über allen anderen Inhalten */
+      overflow: auto; /* Bei Bedarf scrollen */
     }
-
-    .desktop-show {
-        display: none;
-        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    
+    .shoppingCartList .cartContent {
+      display: flex;
+      background-color: #fff; /* Weißer Hintergrund */
+      margin: 5px auto; /* Zentrieren des Inhalts */
+      padding: 5px;
+      height: 10%;
+      width: 80%; /* Breite des Inhalts */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
     }
-
- 
-
-}
-
-/* Große Geräte (Desktops, 1024px und darüber) */
-@media (min-width: 769px) and (max-width: 996px) {
+    
+    .shoppingCartList.show {
+      display: block;
+    }
+    .shoppingCart{
+      max-width: 320px;
+    }
+    .buybutton {
+      max-width: 97%;
+      text-align: center;
+    }
+    .cartNames {
+      justify-content: space-around;
+    }
     
 }
-
-/* Sehr große Geräte (große Desktops, 1200px und darüber) */
-@media (min-width: 996px) and (max-width: 1300px) {
-
-
-}
-
-/* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
-@media only screen and (min-width: 1034px) {
-
-
-}
+  

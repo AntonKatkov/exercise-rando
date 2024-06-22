@@ -1,0 +1,61 @@
+/* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
+@media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: none;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+ 
+
+}
+
+/* Große Geräte (Desktops, 1024px und darüber) */
+@media (min-width: 769px) and (max-width: 996px) {
+    .mobile-hide {
+        display: none;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: block;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+ 
+}
+
+/* Sehr große Geräte (große Desktops, 1200px und darüber) */
+@media (min-width: 996px) and (max-width: 1300px) {
+    .mobile-hide {
+        display: none;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: block;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+ 
+
+}
+
+/* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
+@media only screen and (min-width: 1034px) {
+    .mobile-hide {
+        display: none;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: block;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+
+}

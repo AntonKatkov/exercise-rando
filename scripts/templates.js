@@ -12,15 +12,18 @@ function returnHTML(menuliste, i) {
 
             </div>
             </div>
+
             `;
 }
 function renderCartHeader(totalPrice) {
   let subtotal = totalPrice.toFixed(2).replace(".", ",");
   return /*html*/ `
-    <div class="shoppingCartHeader mobile-hide">
+    <div id="display" class="shoppingCartHeader mobile-hide">
+    <span class="close" onclick="closeCart()">&times;</span>
       <span class="name">
-        <img class="shopingbag" src="img/backpng.png" alt="" />WarenKorb
+        <img class="shopingbag"  src="img/backpng.png" alt="" />WarenKorb
       </span>
+
       <span>Min: 10,00€</span>
       <span>Zwischensumme: ${subtotal} €</span>
       <span>Lieferkosten: 5 €</span>
@@ -42,6 +45,7 @@ function shopRender() {
         ${renderCartItems()}
       </div>
     </div>
+
   `;
 }
 

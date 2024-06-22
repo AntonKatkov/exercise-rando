@@ -106,8 +106,34 @@ function buy() {
   if (totalPrice < 15) {
     alert("Sie haben noch keine Artikel ausgewählt. Mindestbestellwert beträgt 10 €.");
   } else {
-    shoppingCartExit();
     alert("Vielen Dank für Ihre Bestellung!");
+    shoppingCartExit();
   }
+
+}
+
+function cartMobile() {
+  let cartList = document.getElementById("shoppingCartList");
+  if (cartList.classList.contains("mobile-hide")) {
+    cartList.classList.remove("mobile-hide");
+    cartList.classList.add("show");
+  } else {
+    cartList.classList.remove("show");
+    cartList.classList.add("mobile-hide");
+  }
+}
+
+// Close cart when clicking outside of it
+window.onclick = function(event) {
+  let cartList = document.getElementById("shoppingCartList");
+  if (event.target == cartList) {
+    cartList.classList.remove("show");
+    cartList.classList.add("mobile-hide");
+  }
+}
+function closeCart() {
+  let cartList = document.getElementById("shoppingCartList");
+  cartList.classList.remove("show");
+  cartList.classList.add("mobile-hide");
 }
 
