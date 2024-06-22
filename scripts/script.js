@@ -141,3 +141,22 @@ function showPlusOne() {
     plusOneElement.classList.remove('show');
   }, 1000); // 1 Sekunde anstatt 30 Sekunden
 }
+
+
+function save() {
+  localStorage.setItem("basket", JSON.stringify(basket));
+  localStorage.setItem("menu", JSON.stringify(menu));
+}
+
+function load() {
+  let basketAsText = localStorage.getItem("basket");
+  let menuAsText = localStorage.getItem("menu");
+  if (basketAsText) {
+    basket = JSON.parse(basketAsText);
+  }
+  if (menuAsText) {
+    menu = JSON.parse(menuAsText);
+  }
+  renderOrder();
+  renderPrice();
+}

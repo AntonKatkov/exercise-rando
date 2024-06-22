@@ -211,18 +211,6 @@
     }
 
 }
-@media (min-width: 769px) and (max-width: 996px) {
-
-    .mobile-hide {
-        display: none;
-    }
-
-    .desktop-show {
-        display: block;
-    }
-
-
-}
 /* Sehr große Geräte (große Desktops, 1200px und darüber) */
 @media (min-width: 996px) and (max-width: 1300px) {
 
@@ -234,7 +222,6 @@
         display: block;
     }
 }
-
 /* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
 @media only screen and (min-width: 1034px) {
     .mobile-hide {
