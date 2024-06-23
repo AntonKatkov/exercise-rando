@@ -1,3 +1,20 @@
+function checkWindowSize() {
+  const element = document.getElementById("shoppingCartList");
+  const minWidth = 769; // Setze die gewünschte Mindestbreite
+
+  if (window.innerWidth <= minWidth) {
+    element.classList.add("mobile-hide");
+  } else {
+    element.classList.remove("mobile-hide");
+  }
+}
+
+// Überwacht das `resize`-Ereignis des Fensters
+window.addEventListener("resize", checkWindowSize);
+
+// Ruft die Funktion beim Laden der Seite auf
+window.addEventListener("load", checkWindowSize);
+
 function Start() {
   load();
   render();
@@ -15,7 +32,7 @@ function render() {
 }
 
 function addToCartItem(i) {
-  let item = basketMenu.find(item => item.ItemName === menu[i].ItemName);
+  let item = basketMenu.find((item) => item.ItemName === menu[i].ItemName);
   if (item) {
     updateCartItem(item, 1);
   } else {
@@ -58,10 +75,13 @@ function removeItem(item) {
 }
 
 function addItems(i) {
-  let itemIndex = basketMenu.findIndex(item => item.ItemName === basketMenu[i].ItemName);
+  let itemIndex = basketMenu.findIndex(
+    (item) => item.ItemName === basketMenu[i].ItemName
+  );
   if (itemIndex !== -1) {
     basketMenu[itemIndex].amount++;
-    basketMenu[itemIndex].totalPrice = basketMenu[itemIndex].amount * basketMenu[itemIndex].ItemPrice;
+    basketMenu[itemIndex].totalPrice =
+      basketMenu[itemIndex].amount * basketMenu[itemIndex].ItemPrice;
     updateCartItemHTML(basketMenu[itemIndex], itemIndex);
   }
   save();
@@ -69,7 +89,9 @@ function addItems(i) {
 }
 
 function remove(i) {
-  let itemIndex = basketMenu.findIndex(item => item.ItemName === basketMenu[i].ItemName);
+  let itemIndex = basketMenu.findIndex(
+    (item) => item.ItemName === basketMenu[i].ItemName
+  );
   if (itemIndex !== -1) {
     updateOrRemoveItem(itemIndex);
   }
@@ -80,7 +102,8 @@ function remove(i) {
 function updateOrRemoveItem(index) {
   if (basketMenu[index].amount > 1) {
     basketMenu[index].amount--;
-    basketMenu[index].totalPrice = basketMenu[index].amount * basketMenu[index].ItemPrice;
+    basketMenu[index].totalPrice =
+      basketMenu[index].amount * basketMenu[index].ItemPrice;
     updateCartItemHTML(basketMenu[index], index);
   } else {
     basketMenu.splice(index, 1);
@@ -109,7 +132,6 @@ function removeCartItemHTML(i) {
   }
 }
 
-
 function renderCartItems() {
   let cartContainer = document.getElementById("shoppingCart");
   cartContainer.innerHTML = "";
@@ -124,7 +146,7 @@ function renderCartItems() {
 }
 
 function shoppingCartExit() {
-  basketMenu.forEach(item => {
+  basketMenu.forEach((item) => {
     item.amount = 0;
     item.totalPrice = 0;
   });
@@ -145,7 +167,7 @@ function buy() {
 
 function clearBasket() {
   basketMenu = [];
-  menu.forEach(item => {
+  menu.forEach((item) => {
     item.amount = 0;
     item.totalPrice = 0;
   });

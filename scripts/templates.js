@@ -6,12 +6,14 @@ function returnHTML(menuliste, i) {
       <div class="test1">
         <span class="test2"><h2>${menuliste.ItemName}</h2></span>
         <span class="test2 desktop-show">${menuliste.description}</span>
-        <span class="test2"><h3>${menuliste.ItemPrice.toFixed(2).replace(/\./, ",")} €</h3></span>
+        <span class="test2"><h3>${menuliste.ItemPrice.toFixed(2).replace(
+          /\./,
+          ","
+        )} €</h3></span>
       </div>
     </div>
   `;
 }
-
 
 function renderCartHeader(totalPrice) {
   let subtotal = totalPrice.toFixed(2).replace(".", ",");
@@ -31,10 +33,9 @@ function renderCartHeader(totalPrice) {
   `;
 }
 
-
 function shopRender() {
   let totalPrice = 0;
-  for (let i = 0; i < basketMenu.length; i++) { // Hier basketMenu verwenden
+  for (let i = 0; i < basketMenu.length; i++) {
     totalPrice += basketMenu[i].totalPrice;
   }
   return /*html*/ `
@@ -47,14 +48,17 @@ function shopRender() {
   `;
 }
 
-
 function renderCartItem(addToCart, i) {
   let totalPrice = addToCart.amount * addToCart.ItemPrice;
   return /*html*/ `
     <div id="cart${i}" class="cartItemList">
       <div class="cartNames">
-        <span class="cartItemName">${addToCart.amount} ${addToCart.ItemName}</span> 
-        <span class="cartItemPrice">${totalPrice.toFixed(2).replace(".", ",")} €</span>
+        <span class="cartItemName">${addToCart.amount} ${
+    addToCart.ItemName
+  }</span> 
+        <span class="cartItemPrice">${totalPrice
+          .toFixed(2)
+          .replace(".", ",")} €</span>
       </div>
       <div class="cartContent">
         <div onclick="remove(${i})" class="cartItemRemove" role="button">-</div>
@@ -64,4 +68,3 @@ function renderCartItem(addToCart, i) {
     </div>
   `;
 }
-
