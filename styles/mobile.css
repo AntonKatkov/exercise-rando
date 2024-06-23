@@ -126,7 +126,7 @@
 
 
 }
-
+/* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
 @media (min-width: 321px) and (max-width: 768px) {
     .mobile-hide {
         display: block;
